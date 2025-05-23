@@ -1,0 +1,182 @@
+:root {
+    /* Neutral Colors */
+    --neutral-900: hsl(227, 75%, 14%);
+    --neutral-800: hsl(226, 25%, 17%);
+    --neutral-700: hsl(225, 23%, 24%);
+    --neutral-600: hsl(226, 11%, 37%);
+    --neutral-300: hsl(0, 0%, 78%);
+    --neutral-200: hsl(217, 61%, 90%);
+    --neutral-100: hsl(0, 0%, 93%);
+    --neutral-0:   hsl(200, 60%, 99%);
+  
+    /* Red Colors */
+    --red-400: hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700: hsl(3, 77%, 44%);
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+  }
+  
+  /* Reset */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+     /* before that line it only take the space of content */
+    min-height: 100vh;
+    color: var(--neutral-0);
+  }
+  /* For Light Mode */
+  body.light-mode {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    color: var(--neutral-900);
+  }
+  body.light-mode .mode-icon {
+    background-color: var(--neutral-100);
+  }
+  body.light-mode .header, 
+  body.light-mode .card {
+    background-color: var(--neutral-0);
+    color: var(--neutral-900);
+    border: 1px solid var(--neutral-200);
+
+  }
+  body.light-mode .extensions button {
+    background-color: var(--neutral-200);
+  }
+  body.light-mode .extensions button:hover,
+  body.light-mode .extensions .btn-remove:hover {
+    background-color: var(--red-700);
+    color: var(--neutral-0);
+  }
+  
+  body.light-mode .card-content .card-description {
+    color: var(--neutral-600);
+  }
+  body.light-mode .extensions  .btn-remove {
+    border: 1px solid var(--neutral-300);
+    background-color: var(--neutral-0);
+  }
+
+
+
+  /* ************** */
+
+.container {
+    max-width: 95%;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header {
+    background-color: var(--neutral-800);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+button {
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+.header > .logo {
+    width: 100px;
+    background: none;
+    background-color: transparent;
+}
+.header > .mode-icon {
+    width: 35px;
+    background-color: var(--neutral-700);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.extensions  .filters button {
+    border-radius: 20px;
+    font-weight: var(--font-weight-medium);
+    background-color: var(--neutral-600);
+    padding: 0.6rem  1.4rem;
+}
+.extensions button:hover {
+    background-color: var(--red-500);
+    color: var(--neutral-900);
+    transition: 0.3s;
+}
+.extensions h1 {
+    font-size: 2rem;
+}
+.extensions .extensions-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+}
+.extension-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.extension-list .card {
+    /* i think i can not control the width any idea ?!! */
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    padding: 1rem;
+    background-color: var(--neutral-800);
+    border: 1px solid var(--neutral-600);
+    border-radius: 10px;
+   
+}
+  
+.card-main {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; 
+    margin-bottom: 3rem; 
+}
+.card-main > img {
+    width: 50px;
+    border-radius: 8px;
+}
+.card-content .card-description {
+    color: var(--neutral-300);
+    margin-top: 1rem;
+}
+.card .card-actions {
+    display: flex;
+    justify-content: space-between;
+}
+.card-actions .btn-remove {
+   background-color: inherit;
+   border-radius: 20px;
+   padding: 0.5rem 1.2rem;
+   border: 1px solid var(--neutral-600);
+}
+
+.card-actions input{
+    cursor: pointer;
+    
+ }
+
+
+@media(max-width: 1024px)
+{
+    .extension-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
