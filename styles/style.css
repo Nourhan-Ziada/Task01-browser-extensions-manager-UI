@@ -65,7 +65,8 @@ body.light-mode .card {
 }
 
 body.light-mode .extensions button {
-  background-color: var(--neutral-200);
+   background-color: var(--neutral-0);
+   border: 1px solid var(--neutral-200);
 }
 
 body.light-mode .extensions button:hover,
@@ -80,7 +81,6 @@ body.light-mode .card-content .card-description {
 
 body.light-mode .extensions .btn-remove {
   border: 1px solid var(--neutral-300);
-  background-color: var(--neutral-0);
 }
 
 body.light-mode .slider {
@@ -162,7 +162,7 @@ button {
    Extensions Section
 ========================== */
 .extensions h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .extensions .extensions-header {
@@ -182,6 +182,23 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
+@media (max-width: 480px) {
+  /* Stack header elements vertically */
+  .extensions-header {
+    flex-direction: column;
+    align-items: center; 
+    gap: 1rem; 
+  }
+
+  .extensions .filters {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+   
+  }
+}
+
 
 
 /* =======================
