@@ -232,6 +232,7 @@ button {
 
 .card .card-actions {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -300,3 +301,41 @@ input:checked + .slider:before {
 input:focus + .slider {
   box-shadow: 0 0 1px var(--red-500);
 }
+
+
+/* =======================
+   Focus Styles
+========================== */
+
+/* General button focus */
+button:focus-visible {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+}
+
+/* Slider focus */
+input:focus-visible + .slider {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+ 
+}
+
+/* Mode icon focus */
+.mode-icon:focus-visible {
+  outline: 2px solid var(--red-400);
+  outline-offset: 3px;
+}
+
+/* Light mode overrides */
+body.light-mode button:focus-visible {
+  outline: 2px solid var(--red-700);
+}
+
+body.light-mode input:focus-visible + .slider {
+  outline: 2px solid var(--red-700);
+}
+
+body.light-mode .mode-icon:focus-visible {
+  outline: 2px solid var(--red-700);
+}
+
